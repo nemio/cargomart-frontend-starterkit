@@ -1,0 +1,89 @@
+{
+  "name": "starter-kit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test:js": "NODE_ENV=test jest",
+    "flow:check": "flow check",
+    "client:clear": "rm -rf ./dist",
+    "client:start": "NODE_ENV=development webpack-dev-server --config ./config/webpack.config.js",
+    "client:production": "NODE_ENV=production webpack --config ./config/webpack.config.js --optimize-min-chunk-size=100000",
+    "client:build": "yarn run client:clear && yarn run client:production"
+  },
+  "author": "MAG Development",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.5",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^1.0.0",
+    "dotenv": "^6.0.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.3",
+    "eslint": "^5.0.1",
+    "eslint-config-prettier": "^3.0.1",
+    "eslint-plugin-flowtype": "^2.50.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jest": "^21.17.0",
+    "eslint-plugin-react": "^7.10.0",
+    "file-loader": "^2.0.0",
+    "flow-bin": "0.79.1",
+    "flow-typed": "^2.5.1",
+    "html-webpack-plugin": "^3.2.0",
+    "image-webpack-loader": "^4.3.1",
+    "jest": "^23.5.0",
+    "less": "^3.0.4",
+    "less-loader": "^4.1.0",
+    "mini-css-extract-plugin": "^0.4.0",
+    "prettier": "^1.13.7",
+    "react-hot-loader": "4.3.4",
+    "style-loader": "^0.22.1",
+    "uglify-js": "^3.4.1",
+    "uglifyjs-webpack-plugin": "^1.2.6",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.12.0",
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.4"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0-beta.32",
+    "classnames": "2.2.6",
+    "normalizr": "3.2.4",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.5",
+    "react-router": "^4.3.1",
+    "redux": "^4.0.0",
+    "redux-thunk": "2.3.0"
+  },
+  "jest": {
+    "verbose": true,
+    "setupFiles": [
+      "./config/jest.config.js"
+    ],
+    "modulePaths": [
+      "./src"
+    ],
+    "testEnvironment": "jsdom",
+    "collectCoverage": false,
+    "notify": true,
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
+    },
+    "globals": {
+      "__SERVER__": false,
+      "__CLIENT__": false
+    },
+    "snapshotSerializers": [
+      "<rootDir>/node_modules/enzyme-to-json/serializer"
+    ]
+  }
+}

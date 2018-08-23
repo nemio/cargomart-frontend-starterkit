@@ -1,0 +1,9 @@
+.env
+*.local.js
+.vscode
+dist
+webpack-build-log.json
+yarn-error.log
+jsconfig.json
+node_modules
+.idea
