@@ -22,10 +22,15 @@ if (IS_DEV) {
 
 const getProxy = () => {
   return {
-      target: '', // proxy for github
+    '/api': {
+      target: 'https://api.github.com/', // proxy for github
       secure: false,
       changeOrigin: true,
       disableHostCheck: true,
+      pathRewrite: {
+        '^/api': '',
+      },
+    },
   };
 };
 
@@ -51,7 +56,10 @@ const pluginGlobal = new webpack.DefinePlugin({
 const loaderJs = {
   test: /\.js$/,
   include: PATH.src,
-  use: ['babel-loader'],
+  loader: 'babel-loader',
+  options: {
+    plugins: ['transform-class-properties'],
+  },
 };
 const loaderFont = {
   test: /\.(ttf|eot|woff(2)?)(\?[a-z0-9]+)?$/,

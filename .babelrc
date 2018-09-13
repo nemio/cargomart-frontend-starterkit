@@ -16,10 +16,11 @@
         "loose": true
       }
     ],
-    "react",
-    "flow"
+    "react"
   ],
-  "plugins": [],
+  "plugins": [
+    ["transform-object-rest-spread", { "useBuiltIns": true }]
+  ],
   "env": {
     "test": {
       "presets": [

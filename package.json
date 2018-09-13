@@ -54,14 +54,25 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0-beta.32",
+    "@mdi/font": "^2.7.94",
+    "@mdi/js": "^2.7.94",
+    "@mdi/react": "^1.0.1",
+    "axios": "^0.18.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "classnames": "2.2.6",
-    "normalizr": "3.2.4",
+    "final-form": "^4.10.0",
+    "lodash": "^4.17.10",
+    "query-string": "^6.1.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-redux": "^5.0.5",
+    "react-final-form": "^3.6.5",
+    "react-redux": "^5.0.7",
     "react-router": "^4.3.1",
     "redux": "^4.0.0",
-    "redux-thunk": "2.3.0"
+    "redux-actions": "^2.6.1",
+    "redux-devtools-extension": "^2.13.5",
+    "redux-thunk": "^2.3.0"
   },
   "jest": {
     "verbose": true,

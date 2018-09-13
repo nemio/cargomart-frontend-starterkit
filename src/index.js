@@ -2,18 +2,18 @@
 
 import * as React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 
-import Button from './components/Button';
+import store from 'store';
 
-type Props = {};
+import Root from 'containers/Root';
 
-class App extends React.Component<Props> {
-  render() {
-    return <div>Hello Word <Button>Click me</Button></div>;
-  }
-}
+import reset from 'styles/reset.less';
 
-const domContainer = document.getElementById('root');
-if (domContainer) {
-  ReactDOM.render(<App />, domContainer);
+const rootContainer = document.getElementById('root');
+
+if (rootContainer) {
+  ReactDOM.render(<Provider store={ store }>
+    <Root />
+  </Provider>, rootContainer);
 }
